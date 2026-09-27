@@ -217,9 +217,13 @@ nav a:hover{
 .btnPrimary,
 .btnSecondary{
     padding:14px 28px;
+    border:none;
     border-radius:16px;
     text-decoration:none;
+    font-family:inherit;
+    font-size:1rem;
     font-weight:600;
+    cursor:pointer;
     transition:.3s;
 }
 
@@ -246,6 +250,12 @@ nav a:hover{
 }
 
 .btnSecondary:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--raised);
+}
+
+.btnSecondary:active{
+    transform:translateY(0);
     box-shadow:var(--pressed);
 }
 
@@ -332,6 +342,145 @@ nav a:hover{
     border:0;
 }
 
+/* ---------- Secret page (no card) ---------- */
+.secretPage{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+    padding:120px 8%;
+    flex-wrap:wrap;
+}
+
+.secretLeft{
+    flex:1;
+    min-width:280px;
+    max-width:400px;
+}
+
+.secretLeft h2{
+    color:var(--primary);
+    font-size:2rem;
+    margin-bottom:12px;
+}
+
+.secretLeft p{
+    color:var(--muted);
+    margin-bottom:28px;
+}
+
+.secretRight{
+    flex:1;
+    min-width:280px;
+    max-width:450px;
+}
+
+.secretRight form{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+}
+
+.convertBtn{
+    width:48px;
+    height:48px;
+    margin:28px auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:none;
+    border-radius:50%;
+    background:var(--bg);
+    color:var(--secondary);
+    box-shadow:var(--raised-sm);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.convertBtn svg{
+    width:20px;
+    height:20px;
+    stroke:currentColor;
+    fill:none;
+    stroke-width:2.4;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.convertBtn:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--raised);
+}
+
+.convertBtn:active{
+    transform:translateY(0);
+    box-shadow:var(--pressed);
+}
+
+/* ---------- Form fields (secret page) ---------- */
+.inputField{
+    display:block;
+    width:100%;
+    padding:16px 20px;
+    border:none;
+    border-radius:16px;
+    background:var(--bg);
+    color:var(--text);
+    font-size:1rem;
+    box-shadow:var(--pressed);
+    outline:none;
+    transition:box-shadow .25s ease;
+}
+
+.inputField::placeholder{
+    color:var(--muted);
+}
+
+.inputField:focus{
+    box-shadow:var(--pressed), 0 0 0 3px var(--secondary);
+}
+
+.arrowDown{
+    width:48px;
+    height:48px;
+    margin:28px auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--bg);
+    color:var(--secondary);
+    box-shadow:var(--raised-sm);
+    animation:bounceArrow 2.2s ease-in-out infinite;
+}
+
+.arrowDown svg{
+    width:20px;
+    height:20px;
+    stroke:currentColor;
+    fill:none;
+    stroke-width:2.4;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+@keyframes bounceArrow{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(6px); }
+}
+
+.outputBox{
+    min-height:24px;
+    padding:4px 0;
+}
+
+.errorText{
+    font-family:'Pixelify Sans',sans-serif;
+    color:#c0392b !important;
+    letter-spacing:0.02em;
+}
 /* ---------- Footer ---------- */
 footer{
     margin-top:120px;
@@ -468,6 +617,21 @@ footer{
 
     .footerLinks{
         gap:40px;
+    }
+
+        .secretPage{
+        flex-direction:column;
+        padding:80px 5%;
+        text-align:center;
+    }
+
+    .secretLeft,
+    .secretRight{
+        max-width:100%;
+    }
+
+    .secretLeft .buttons{
+        justify-content:center;
     }
 }
 
