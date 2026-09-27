@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Dansh</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta name="theme-color" content="#0B3D91">
+
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <style>
+        .notFound{
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            padding:0 20px;
+        }
+
+        .notFound h1{
+            font-family:'Pixelify Sans',sans-serif;
+            font-size:clamp(6rem,25vw,14rem);
+            font-weight:700;
+            line-height:1;
+            background:linear-gradient(90deg,var(--primary),var(--secondary));
+            background-clip:text;
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+
+        .notFound .oops{
+            margin-top:16px;
+            font-size:clamp(1.2rem,3vw,1.6rem);
+            font-weight:600;
+            color:var(--primary);
+        }
+
+        .notFound .hint{
+            position:absolute;
+            bottom:40px;
+            left:0;
+            width:100%;
+            padding:0 20px;
+            color:var(--muted);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="stars"></div>
+    <div class="bgBlur blur1"></div>
+    <div class="bgBlur blur2"></div>
+
+    <main class="notFound">
+        <h1>404</h1>
+        <p class="oops">oopsie, i haven't thought of making this one</p>
+        <p class="hint">or maybe, you redirected to wrong link. Go <a href="/" class="hyperLink">here</a> to the main website</p>
+    </main>
+
+    <script src="/script.js"></script>
+</body>
+</html>
